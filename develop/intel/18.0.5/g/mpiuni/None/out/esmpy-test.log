@@ -1,0 +1,10 @@
+find . -name "*ESMF_LogFile*" -exec rm -f {} \; || :
+find . -name "*.report.json" -exec rm -rf {} \; || :
+find . -name "*.test" -exec rm -rf {} \; || :
+bash src/esmpy/test/test_all.bash "/glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmf/src/Infrastructure/stubs/mpiuni/mpirun"
+/glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmpy_venv/lib/python3.7/site-packages/esmpy/interface/loadESMF.py:83: VersionWarning: ESMF installation version 8.4.0 beta snapshot, ESMPy version 8.4.0
+  esmfversion, constants._ESMPY_VERSION), VersionWarning)
+Testing ESMPy 8.4.0
+/glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmf/src/Infrastructure/stubs/mpiuni/mpirun -n 1 python3 -m pytest -vs --json-report --json-report-summary > esmpy8.4.0-petx1.test 2>&1
+Makefile:39: recipe for target 'test' failed
+make: *** [test] Error 126
