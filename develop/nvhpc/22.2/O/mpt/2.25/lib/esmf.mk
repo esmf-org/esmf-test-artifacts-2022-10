@@ -13,7 +13,7 @@
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.4.0 beta snapshot
-ESMF_VERSION_STRING_GIT=v8.4.0b15-3-g3dcba377fa
+ESMF_VERSION_STRING_GIT=v8.4.0b15-7-gae8efd6d7f
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -34,7 +34,7 @@ ESMF_F90LINKER=mpif90
 
 ESMF_F90COMPILEOPTS=-O -fpic -mcmodel=small -Mallocatable=03 -pthread  -mp
 ESMF_F90COMPILEPATHS=-I/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf/mod/modO/Linux.nvhpc.64.mpt.default -I/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf/src/include -I/glade/u/apps/ch/opt/netcdf/4.8.1/nvhpc/22.2/include -I/glade/u/apps/ch/opt/netcdf/4.8.1/nvhpc/22.2/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.4.0b15-3-g3dcba377fa' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf -DESMF_NO_F2018ASSUMEDTYPE
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.4.0b15-7-gae8efd6d7f' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf -DESMF_NO_F2018ASSUMEDTYPE
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=-Mfreeform
 ESMF_F90COMPILEFIXCPP=-Mpreprocess -Mnofreeform
@@ -53,7 +53,7 @@ ESMF_CXXLINKER=mpicxx
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -O -DNDEBUG -fpic -mcmodel=small -pthread  -mp
 ESMF_CXXCOMPILEPATHS= -I/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf/src/include  -I/glade/u/apps/ch/opt/netcdf/4.8.1/nvhpc/22.2/include -I/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.4.0b15-3-g3dcba377fa' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_F2018ASSUMEDTYPE
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.4.0b15-7-gae8efd6d7f' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_F2018ASSUMEDTYPE
 
 ESMF_CXXLINKOPTS=  -mcmodel=small -pthread -Wl,--no-as-needed  -mp
 ESMF_CXXLINKPATHS=-L/glade/scratch/dunlap/esmf-testing/nvhpc_22.2_mpt_O_develop/esmf/lib/libO/Linux.nvhpc.64.mpt.default -L/glade/u/apps/ch/opt/netcdf/4.8.1/nvhpc/22.2/lib -L/glade/u/apps/ch/opt/netcdf/4.8.1/nvhpc/22.2/lib
