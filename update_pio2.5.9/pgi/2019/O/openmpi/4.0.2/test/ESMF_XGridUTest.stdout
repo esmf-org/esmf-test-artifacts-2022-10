@@ -1,0 +1,87 @@
+2022-10-04 03:01:46
+  Beginning Test, file ESMF_XGridUTest.F90, line 54
+  NUMBER_OF_PROCESSORS            2
+[Orion-05-24:274456:0:274456] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+  Beginning Test, file ESMF_XGridUTest.F90, line 54
+  NUMBER_OF_PROCESSORS            2
+[Orion-05-24:274457:0:274457] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+==== backtrace (tid: 274457) ====
+ 0 0x000000000072c853 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x0000000000884a51 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000f962fc esmf_meshmod_esmf_meshcreatefrompointer_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:3091
+ 3 0x0000000000e77ad2 esmf_gridutilmod_esmf_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/GridUtil/interface/ESMF_GridUtil.F90:453
+ 4 0x0000000001023fb6 esmf_xgridcreatemod_esmf_xgridcreate_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/XGrid/src/ESMF_XGridCreate.F90:958
+ 5 0x000000000043a84b esmf_xgridutest_test_side_and_elem_info()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/XGrid/tests/ESMF_XGridUTest.F90:5743
+ 6 0x0000000000406f00 MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/XGrid/tests/ESMF_XGridUTest.F90:64
+ 7 0x0000000000406cd3 main()  ???:0
+ 8 0x0000000000022495 __libc_start_main()  ???:0
+ 9 0x0000000000406bd9 _start()  ???:0
+=================================
+[Orion-05-24:274457] *** Process received signal ***
+[Orion-05-24:274457] Signal: Segmentation fault (11)
+[Orion-05-24:274457] Signal code:  (-6)
+[Orion-05-24:274457] Failing at address: 0x20e500043019
+[Orion-05-24:274457] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7fa972b435d0]
+[Orion-05-24:274457] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7fa9712e7853]
+[Orion-05-24:274457] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7fa97143fa51]
+[Orion-05-24:274457] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreatefrompointer_+0x4c)[0x7fa971b512fc]
+[Orion-05-24:274457] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridutilmod_esmf_gridtomesh_+0x352)[0x7fa971a32ad2]
+[Orion-05-24:274457] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_xgridcreatemod_esmf_xgridcreate_+0x2e36)[0x7fa971bdefb6]
+[Orion-05-24:274457] [ 6] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/test/testO/Linux.pgi.64.openmpi.default/./ESMF_XGridUTest[0x43a84b]
+[Orion-05-24:274457] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/test/testO/Linux.pgi.64.openmpi.default/./ESMF_XGridUTest[0x406f00]
+[Orion-05-24:274457] [ 8] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/test/testO/Linux.pgi.64.openmpi.default/./ESMF_XGridUTest[0x406cd3]
+[Orion-05-24:274457] [ 9] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7fa96d008495]
+[Orion-05-24:274457] [10] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/test/testO/Linux.pgi.64.openmpi.default/./ESMF_XGridUTest[0x406bd9]
+[Orion-05-24:274457] *** End of error message ***
+==== backtrace (tid: 274456) ====
+ 0 0x000000000072c853 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x0000000000884a51 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000f962fc esmf_meshmod_esmf_meshcreatefrompointer_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:3091
+ 3 0x0000000000e77ad2 esmf_gridutilmod_esmf_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/GridUtil/interface/ESMF_GridUtil.F90:453
+ 4 0x0000000001023fb6 esmf_xgridcreatemod_esmf_xgridcreate_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/XGrid/src/ESMF_XGridCreate.F90:958
+ 5 0x000000000043a84b esmf_xgridutest_test_side_and_elem_info()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/XGrid/tests/ESMF_XGridUTest.F90:5743
+ 6 0x0000000000406f00 MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/src/Infrastructure/XGrid/tests/ESMF_XGridUTest.F90:64
+ 7 0x0000000000406cd3 main()  ???:0
+ 8 0x0000000000022495 __libc_start_main()  ???:0
+ 9 0x0000000000406bd9 _start()  ???:0
+=================================
+[Orion-05-24:274456] *** Process received signal ***
+[Orion-05-24:274456] Signal: Segmentation fault (11)
+[Orion-05-24:274456] Signal code:  (-6)
+[Orion-05-24:274456] Failing at address: 0x20e500043018
+[Orion-05-24:274456] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7f5931b3b5d0]
+[Orion-05-24:274456] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7f59302df853]
+[Orion-05-24:274456] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7f5930437a51]
+[Orion-05-24:274456] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreatefrompointer_+0x4c)[0x7f5930b492fc]
+[Orion-05-24:274456] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridutilmod_esmf_gridtomesh_+0x352)[0x7f5930a2aad2]
+[Orion-05-24:274456] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_xgridcreatemod_esmf_xgridcreate_+0x2e36)[0x7f5930bd6fb6]
+[Orion-05-24:274456] [ 6] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/test/testO/Linux.pgi.64.openmpi.default/./ESMF_XGridUTest[0x43a84b]
+[Orion-05-24:274456] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/test/testO/Linux.pgi.64.openmpi.default/./ESMF_XGridUTest[0x406f00]
+[Orion-05-24:274456] [ 8] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/test/testO/Linux.pgi.64.openmpi.default/./ESMF_XGridUTest[0x406cd3]
+[Orion-05-24:274456] [ 9] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7f592c000495]
+[Orion-05-24:274456] [10] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_update_pio2.5.9/esmf/test/testO/Linux.pgi.64.openmpi.default/./ESMF_XGridUTest[0x406bd9]
+[Orion-05-24:274456] *** End of error message ***
+srun: error: Orion-05-24: tasks 0-1: Segmentation fault
+srun: launch/slurm: _step_signal: Terminating StepId=7007418.114
