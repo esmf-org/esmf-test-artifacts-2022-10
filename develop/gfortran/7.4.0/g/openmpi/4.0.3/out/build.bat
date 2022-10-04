@@ -6,6 +6,7 @@
 #PBS -l select=1:ncpus=36:mpiprocs=36
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
+module load python/3.7.9
 module load gnu/7.4.0 openmpi/4.0.3
 module load netcdf/4.7.3
 
