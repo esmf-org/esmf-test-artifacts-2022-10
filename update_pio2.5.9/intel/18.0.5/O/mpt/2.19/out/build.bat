@@ -12,15 +12,15 @@ module load python/3.7.9
 
 set -x
 export ESMPY_DATA_DIR="/glade/work/dunlap/esmf-test-data/grids"
-export ESMF_DIR=/glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpt_O_update_pio2.5.9/esmf
+export ESMF_DIR=/glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpt_O_update_pio2.5.9/esmf
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpt
 export ESMF_NETCDF=nc-config
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-module list >& /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpt_O_update_pio2.5.9/module-build.log
-cd /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpt_O_update_pio2.5.9/esmf
+module list >& /glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpt_O_update_pio2.5.9/module-build.log
+cd /glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpt_O_update_pio2.5.9/esmf
 set -o pipefail
 make info 2>&1| tee ../info.log
 make -j 36 2>&1| tee ../build.log

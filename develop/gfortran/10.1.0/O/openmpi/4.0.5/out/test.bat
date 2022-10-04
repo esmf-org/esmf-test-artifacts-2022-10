@@ -12,23 +12,23 @@ module load python/3.7.9
 
 set -x
 export ESMPY_DATA_DIR="/glade/work/dunlap/esmf-test-data/grids"
-export ESMF_DIR=/glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmf
+export ESMF_DIR=/glade/scratch/dunlap/esmf-testing/gfortran_10.1.0_openmpi_O_develop/esmf
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
 export ESMF_NETCDF=nc-config
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-module list >& /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/module-test.log
-cd /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmf
+module list >& /glade/scratch/dunlap/esmf-testing/gfortran_10.1.0_openmpi_O_develop/module-test.log
+cd /glade/scratch/dunlap/esmf-testing/gfortran_10.1.0_openmpi_O_develop/esmf
 make install 2>&1| tee ../install.log
 make all_tests 2>&1| tee ../test.log
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 cd ../nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc.log
-ssh cheyenne6 /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmpy_install.bat
-cd /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop
+ssh cheyenne6 /glade/scratch/dunlap/esmf-testing/gfortran_10.1.0_openmpi_O_develop/esmpy_install.bat
+cd /glade/scratch/dunlap/esmf-testing/gfortran_10.1.0_openmpi_O_develop
 . esmpy_venv/bin/activate
-cd /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmf/src/addon/esmpy
-make test 2>&1| tee /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmpy-test.log
+cd /glade/scratch/dunlap/esmf-testing/gfortran_10.1.0_openmpi_O_develop/esmf/src/addon/esmpy
+make test 2>&1| tee /glade/scratch/dunlap/esmf-testing/gfortran_10.1.0_openmpi_O_develop/esmpy-test.log
 deactivate

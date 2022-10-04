@@ -12,22 +12,22 @@ module load python/3.7.9
 
 set -x
 export ESMPY_DATA_DIR="/glade/work/dunlap/esmf-test-data/grids"
-export ESMF_DIR=/glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpiuni_g_develop/esmf
+export ESMF_DIR=/glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmf
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpiuni
 export ESMF_NETCDF=nc-config
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-export ESMF_MPIRUN=/glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpiuni_g_develop/esmf/src/Infrastructure/stubs/mpiuni/mpirun
-module list >& /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpiuni_g_develop/module-test.log
-cd /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpiuni_g_develop/esmf
+export ESMF_MPIRUN=/glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmf/src/Infrastructure/stubs/mpiuni/mpirun
+module list >& /glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/module-test.log
+cd /glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmf
 make install 2>&1| tee ../install.log
 make all_tests 2>&1| tee ../test.log
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
-ssh cheyenne6 /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpiuni_g_develop/esmpy_install.bat
-cd /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpiuni_g_develop
+ssh cheyenne6 /glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmpy_install.bat
+cd /glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop
 . esmpy_venv/bin/activate
-cd /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpiuni_g_develop/esmf/src/addon/esmpy
-make test 2>&1| tee /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpiuni_g_develop/esmpy-test.log
+cd /glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmf/src/addon/esmpy
+make test 2>&1| tee /glade/scratch/dunlap/esmf-testing/intel_18.0.5_mpiuni_g_develop/esmpy-test.log
 deactivate

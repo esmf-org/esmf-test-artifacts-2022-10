@@ -6,20 +6,19 @@
 #PBS -l select=1:ncpus=36:mpiprocs=36
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-module load python/3.7.9
 module load gnu/9.1.0 openmpi/4.0.5
 module load netcdf/4.7.3
 
 set -x
-export ESMF_DIR=/glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_g_update_pio2.5.9/esmf
+export ESMF_DIR=/glade/scratch/dunlap/esmf-testing/gfortran_9.1.0_openmpi_g_update_pio2.5.9/esmf
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
 export ESMF_NETCDF=nc-config
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-module list >& /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_g_update_pio2.5.9/module-test.log
-cd /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_g_update_pio2.5.9/esmf
+module list >& /glade/scratch/dunlap/esmf-testing/gfortran_9.1.0_openmpi_g_update_pio2.5.9/module-test.log
+cd /glade/scratch/dunlap/esmf-testing/gfortran_9.1.0_openmpi_g_update_pio2.5.9/esmf
 make install 2>&1| tee ../install.log
 make all_tests 2>&1| tee ../test.log
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
