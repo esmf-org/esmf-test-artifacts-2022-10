@@ -6,15 +6,15 @@ module load gcc/11.2.0 openmpi/4.1.0
 module load netcdf/4.7.4
 
 set -x
-export ESMF_DIR=/project/esmf/rocky/esmf-testing/gfortran_11.2.0_openmpi_g_develop/esmf
+export ESMF_DIR=/project/esmf/sacks/esmf-testing/gfortran_11.2.0_openmpi_g_develop/esmf
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
 export ESMF_NETCDF=nc-config
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-module list >& /project/esmf/rocky/esmf-testing/gfortran_11.2.0_openmpi_g_develop/module-build.log
-cd /project/esmf/rocky/esmf-testing/gfortran_11.2.0_openmpi_g_develop/esmf
+module list >& /project/esmf/sacks/esmf-testing/gfortran_11.2.0_openmpi_g_develop/module-build.log
+cd /project/esmf/sacks/esmf-testing/gfortran_11.2.0_openmpi_g_develop/esmf
 set -o pipefail
 make info 2>&1| tee ../info.log
 make -j 4 2>&1| tee ../build.log
