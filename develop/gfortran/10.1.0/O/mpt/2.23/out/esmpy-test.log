@@ -1,0 +1,17 @@
+find . -name "*ESMF_LogFile*" -exec rm -f {} \; || :
+find . -name "*.report.json" -exec rm -rf {} \; || :
+find . -name "*.test" -exec rm -rf {} \; || :
+bash src/esmpy/test/test_all.bash "mpirun "
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_mpt_O_develop/esmpy_venv/lib/python3.7/site-packages/esmpy/__init__.py", line 112, in <module>
+    from esmpy.api.esmpymanager import *
+  File "/glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_mpt_O_develop/esmpy_venv/lib/python3.7/site-packages/esmpy/api/esmpymanager.py", line 9, in <module>
+    from esmpy.interface.cbindings import *
+  File "/glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_mpt_O_develop/esmpy_venv/lib/python3.7/site-packages/esmpy/interface/cbindings.py", line 13, in <module>
+    from esmpy.interface.loadESMF import _ESMF
+  File "/glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_mpt_O_develop/esmpy_venv/lib/python3.7/site-packages/esmpy/interface/loadESMF.py", line 78, in <module>
+    esmfversion, constants._ESMPY_VERSION))
+esmpy.util.exceptions.VersionMismatch: ESMF installation version 8.5.0 beta snapshot, ESMPy version 8.4.0
+Makefile:39: recipe for target 'test' failed
+make: *** [test] Error 1
