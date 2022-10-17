@@ -1,0 +1,307 @@
+2022-10-17 03:07:41
+[Orion-02-11:116083:0:116083] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+[Orion-02-11:116084:0:116084] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+[Orion-02-11:116085:0:116085] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+[Orion-02-11:116086:0:116086] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4f1b591)
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+
+/work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C: [ ESMCI::LogErr::MsgFoundError() ]
+      ...
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+      583 {
+      584     bool result=false;
+      585 #ifdef ESMC_SUCCESSDEFAULT_ON
+==>   586     if (rcToReturn != ESMC_NULL_POINTER) *rcToReturn=ESMF_SUCCESS;
+      587 #endif
+
+      588     if (trace) {
+      589         Write(ESMC_METHOD,ESMC_LOGMSG_TRACE,
+
+==== backtrace (tid: 116086) ====
+ 0 0x000000000072c2b3 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x00000000008844b1 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000f95f5c esmf_meshmod_esmf_meshcreatefrompointer_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:3091
+ 3 0x0000000000e77722 esmf_gridutilmod_esmf_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/GridUtil/interface/ESMF_GridUtil.F90:453
+ 4 0x0000000000d9baf6 esmf_fieldregridmod_b_or_p_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:3228
+ 5 0x0000000000d99004 esmf_fieldregridmod_getmeshwithnodesonfieldloc_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1346
+ 6 0x0000000000d97563 esmf_fieldregridmod_esmf_fieldregridstorenx_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:971
+ 7 0x0000000001227a17 nuopc_connector_fieldbundlecplstore_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Connector.F90:7919
+ 8 0x000000000120ee74 nuopc_connector_initializeipdv05p6b_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Connector.F90:5386
+ 9 0x0000000000650f57 ESMCI::FTable::callVFuncPtr()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:2167
+10 0x000000000064f15a ESMCI_FTableCallEntryPointVMHop()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:824
+11 0x0000000000a36458 ESMCI::VM::enter()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:1216
+12 0x000000000064f537 c_esmc_ftablecallentrypointvm_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:981
+13 0x0000000000c0994d esmf_compmod_esmf_compexecute_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_Comp.F90:1223
+14 0x0000000000c1a1f1 esmf_cplcompmod_esmf_cplcompinitialize_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_CplComp.F90:1165
+15 0x00000000012475a4 nuopc_driver_loopconnectorcompss_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:2869
+16 0x000000000123eac1 nuopc_driver_initializeipdv02p3_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:2020
+17 0x000000000122e5ea nuopc_driver_initializegeneric_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:479
+18 0x0000000000650f57 ESMCI::FTable::callVFuncPtr()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:2167
+19 0x000000000064f15a ESMCI_FTableCallEntryPointVMHop()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:824
+20 0x0000000000a36458 ESMCI::VM::enter()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:1216
+21 0x000000000064f537 c_esmc_ftablecallentrypointvm_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:981
+22 0x0000000000c0994d esmf_compmod_esmf_compexecute_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_Comp.F90:1223
+==== backtrace (tid: 116084) ====
+ 0 0x000000000072c2b3 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x00000000008844b1 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000f95f5c esmf_meshmod_esmf_meshcreatefrompointer_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:3091
+ 3 0x0000000000e77722 esmf_gridutilmod_esmf_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/GridUtil/interface/ESMF_GridUtil.F90:453
+ 4 0x0000000000d9baf6 esmf_fieldregridmod_b_or_p_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:3228
+ 5 0x0000000000d99004 esmf_fieldregridmod_getmeshwithnodesonfieldloc_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1346
+ 6 0x0000000000d97563 esmf_fieldregridmod_esmf_fieldregridstorenx_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:971
+ 7 0x0000000001227a17 nuopc_connector_fieldbundlecplstore_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Connector.F90:7919
+ 8 0x000000000120ee74 nuopc_connector_initializeipdv05p6b_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Connector.F90:5386
+ 9 0x0000000000650f57 ESMCI::FTable::callVFuncPtr()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:2167
+10 0x000000000064f15a ESMCI_FTableCallEntryPointVMHop()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:824
+11 0x0000000000a36458 ESMCI::VM::enter()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:1216
+12 0x000000000064f537 c_esmc_ftablecallentrypointvm_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:981
+13 0x0000000000c0994d esmf_compmod_esmf_compexecute_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_Comp.F90:1223
+14 0x0000000000c1a1f1 esmf_cplcompmod_esmf_cplcompinitialize_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_CplComp.F90:1165
+15 0x00000000012475a4 nuopc_driver_loopconnectorcompss_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:2869
+16 0x000000000123eac1 nuopc_driver_initializeipdv02p3_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:2020
+17 0x000000000122e5ea nuopc_driver_initializegeneric_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:479
+18 0x0000000000650f57 ESMCI::FTable::callVFuncPtr()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:2167
+19 0x000000000064f15a ESMCI_FTableCallEntryPointVMHop()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:824
+20 0x0000000000a36458 ESMCI::VM::enter()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:1216
+21 0x000000000064f537 c_esmc_ftablecallentrypointvm_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:981
+22 0x0000000000c0994d esmf_compmod_esmf_compexecute_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_Comp.F90:1223
+23 0x0000000000ddd9a1 esmf_gridcompmod_esmf_gridcompinitialize_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_GridComp.F90:1412
+24 0x00000000004065fd MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/mainApp.F90:71
+25 0x0000000000406213 main()  ???:0
+26 0x0000000000022495 __libc_start_main()  ???:0
+27 0x0000000000406119 _start()  ???:0
+=================================
+[Orion-02-11:116086] *** Process received signal ***
+[Orion-02-11:116086] Signal: Segmentation fault (11)
+[Orion-02-11:116086] Signal code:  (-6)
+[Orion-02-11:116086] Failing at address: 0x20e50001c576
+23 0x0000000000ddd9a1 esmf_gridcompmod_esmf_gridcompinitialize_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_GridComp.F90:1412
+24 0x00000000004065fd MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/mainApp.F90:71
+25 0x0000000000406213 main()  ???:0
+26 0x0000000000022495 __libc_start_main()  ???:0
+27 0x0000000000406119 _start()  ???:0
+=================================
+[Orion-02-11:116084] *** Process received signal ***
+[Orion-02-11:116084] Signal: Segmentation fault (11)
+[Orion-02-11:116084] Signal code:  (-6)
+[Orion-02-11:116084] Failing at address: 0x20e50001c574
+[Orion-02-11:116086] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7f93d8a2e5d0]
+[Orion-02-11:116084] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7fa4611185d0]
+[Orion-02-11:116086] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7f93d71d22b3]
+[Orion-02-11:116084] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7fa45f8bc2b3]
+[Orion-02-11:116086] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7f93d732a4b1]
+[Orion-02-11:116084] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7fa45fa144b1]
+[Orion-02-11:116086] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreatefrompointer_+0x4c)[0x7f93d7a3bf5c]
+[Orion-02-11:116084] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreatefrompointer_+0x4c)[0x7fa460125f5c]
+[Orion-02-11:116086] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridutilmod_esmf_gridtomesh_+0x352)[0x7f93d791d722]
+[Orion-02-11:116084] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridutilmod_esmf_gridtomesh_+0x352)[0x7fa460007722]
+[Orion-02-11:116086] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_b_or_p_gridtomesh_+0x156)[0x7f93d7841af6]
+[Orion-02-11:116084] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_b_or_p_gridtomesh_+0x156)[0x7fa45ff2baf6]
+[Orion-02-11:116086] [ 6] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_getmeshwithnodesonfieldloc_+0x394)[0x7f93d783f004]
+[Orion-02-11:116084] [ 6] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_getmeshwithnodesonfieldloc_+0x394)[0x7fa45ff29004]
+[Orion-02-11:116086] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_esmf_fieldregridstorenx_+0x9c3)[0x7f93d783d563]
+[Orion-02-11:116084] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_esmf_fieldregridstorenx_+0x9c3)[0x7fa45ff27563]
+[Orion-02-11:116086] [ 8] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_connector_fieldbundlecplstore_+0xbc87)[0x7f93d7ccda17]
+[Orion-02-11:116084] [ 8] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_connector_fieldbundlecplstore_+0xbc87)[0x7fa4603b7a17]
+[Orion-02-11:116086] [ 9] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_connector_initializeipdv05p6b_+0x4f74)[0x7f93d7cb4e74]
+[Orion-02-11:116084] [ 9] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_connector_initializeipdv05p6b_+0x4f74)[0x7fa46039ee74]
+[Orion-02-11:116086] [10] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x417)[0x7f93d70f6f57]
+[Orion-02-11:116084] [10] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x417)[0x7fa45f7e0f57]
+[Orion-02-11:116086] [11] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x1ea)[0x7f93d70f515a]
+[Orion-02-11:116084] [11] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x1ea)[0x7fa45f7df15a]
+[Orion-02-11:116086] [12] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x18)[0x7f93d74dc458]
+[Orion-02-11:116084] [12] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x18)[0x7fa45fbc6458]
+[Orion-02-11:116086] [13] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x337)[0x7f93d70f5537]
+[Orion-02-11:116084] [13] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x337)[0x7fa45f7df537]
+[Orion-02-11:116086] [14] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_compmod_esmf_compexecute_+0x7ed)[0x7f93d76af94d]
+[Orion-02-11:116084] [14] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_compmod_esmf_compexecute_+0x7ed)[0x7fa45fd9994d]
+[Orion-02-11:116086] [15] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_cplcompmod_esmf_cplcompinitialize_+0x161)[0x7f93d76c01f1]
+[Orion-02-11:116084] [15] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_cplcompmod_esmf_cplcompinitialize_+0x161)[0x7fa45fdaa1f1]
+[Orion-02-11:116086] [16] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_loopconnectorcompss_+0xeb4)[0x7f93d7ced5a4]
+[Orion-02-11:116084] [16] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_loopconnectorcompss_+0xeb4)[0x7fa4603d75a4]
+[Orion-02-11:116086] [17] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_initializeipdv02p3_+0x20f1)[0x7f93d7ce4ac1]
+[Orion-02-11:116084] [17] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_initializeipdv02p3_+0x20f1)[0x7fa4603ceac1]
+[Orion-02-11:116086] [18] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_initializegeneric_+0x62a)[0x7f93d7cd45ea]
+[Orion-02-11:116084] [18] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_initializegeneric_+0x62a)[0x7fa4603be5ea]
+[Orion-02-11:116086] [19] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x417)[0x7f93d70f6f57]
+[Orion-02-11:116084] [19] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x417)[0x7fa45f7e0f57]
+[Orion-02-11:116086] [20] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x1ea)[0x7f93d70f515a]
+[Orion-02-11:116084] [20] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x1ea)[0x7fa45f7df15a]
+[Orion-02-11:116084] [21] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x18)[0x7fa45fbc6458]
+[Orion-02-11:116086] [21] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x18)[0x7f93d74dc458]
+[Orion-02-11:116084] [22] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x337)[0x7fa45f7df537]
+[Orion-02-11:116086] [22] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x337)[0x7f93d70f5537]
+[Orion-02-11:116084] [23] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_compmod_esmf_compexecute_+0x7ed)[0x7fa45fd9994d]
+[Orion-02-11:116086] [23] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_compmod_esmf_compexecute_+0x7ed)[0x7f93d76af94d]
+[Orion-02-11:116084] [24] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridcompmod_esmf_gridcompinitialize_+0x161)[0x7fa45ff6d9a1]
+[Orion-02-11:116086] [24] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridcompmod_esmf_gridcompinitialize_+0x161)[0x7f93d78839a1]
+[Orion-02-11:116086] [25] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x4065fd]
+[Orion-02-11:116086] [26] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x406213]
+[Orion-02-11:116084] [25] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x4065fd]
+[Orion-02-11:116084] [26] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x406213]
+[Orion-02-11:116084] [27] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7fa45b5dd495]
+[Orion-02-11:116084] [28] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x406119]
+[Orion-02-11:116084] *** End of error message ***
+[Orion-02-11:116086] [27] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7f93d2ef3495]
+[Orion-02-11:116086] [28] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x406119]
+[Orion-02-11:116086] *** End of error message ***
+==== backtrace (tid: 116085) ====
+ 0 0x000000000072c2b3 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x00000000008844b1 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000f95f5c esmf_meshmod_esmf_meshcreatefrompointer_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:3091
+ 3 0x0000000000e77722 esmf_gridutilmod_esmf_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/GridUtil/interface/ESMF_GridUtil.F90:453
+ 4 0x0000000000d9baf6 esmf_fieldregridmod_b_or_p_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:3228
+ 5 0x0000000000d99004 esmf_fieldregridmod_getmeshwithnodesonfieldloc_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1346
+ 6 0x0000000000d97563 esmf_fieldregridmod_esmf_fieldregridstorenx_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:971
+ 7 0x0000000001227a17 nuopc_connector_fieldbundlecplstore_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Connector.F90:7919
+ 8 0x000000000120ee74 nuopc_connector_initializeipdv05p6b_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Connector.F90:5386
+ 9 0x0000000000650f57 ESMCI::FTable::callVFuncPtr()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:2167
+10 0x000000000064f15a ESMCI_FTableCallEntryPointVMHop()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:824
+11 0x0000000000a36458 ESMCI::VM::enter()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:1216
+12 0x000000000064f537 c_esmc_ftablecallentrypointvm_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:981
+13 0x0000000000c0994d esmf_compmod_esmf_compexecute_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_Comp.F90:1223
+14 0x0000000000c1a1f1 esmf_cplcompmod_esmf_cplcompinitialize_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_CplComp.F90:1165
+15 0x00000000012475a4 nuopc_driver_loopconnectorcompss_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:2869
+16 0x000000000123eac1 nuopc_driver_initializeipdv02p3_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:2020
+17 0x000000000122e5ea nuopc_driver_initializegeneric_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:479
+18 0x0000000000650f57 ESMCI::FTable::callVFuncPtr()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:2167
+19 0x000000000064f15a ESMCI_FTableCallEntryPointVMHop()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:824
+20 0x0000000000a36458 ESMCI::VM::enter()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:1216
+21 0x000000000064f537 c_esmc_ftablecallentrypointvm_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:981
+22 0x0000000000c0994d esmf_compmod_esmf_compexecute_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_Comp.F90:1223
+23 0x0000000000ddd9a1 esmf_gridcompmod_esmf_gridcompinitialize_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_GridComp.F90:1412
+24 0x00000000004065fd MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/mainApp.F90:71
+25 0x0000000000406213 main()  ???:0
+26 0x0000000000022495 __libc_start_main()  ???:0
+27 0x0000000000406119 _start()  ???:0
+=================================
+[Orion-02-11:116085] *** Process received signal ***
+[Orion-02-11:116085] Signal: Segmentation fault (11)
+[Orion-02-11:116085] Signal code:  (-6)
+[Orion-02-11:116085] Failing at address: 0x20e50001c575
+==== backtrace (tid: 116083) ====
+ 0 0x000000000072c2b3 ESMCI::LogErr::MsgFoundError()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+ 1 0x00000000008844b1 c_esmc_meshcreatenodedistgrid_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Mesh/interface/ESMCI_Mesh_F.C:248
+ 2 0x0000000000f95f5c esmf_meshmod_esmf_meshcreatefrompointer_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:3091
+ 3 0x0000000000e77722 esmf_gridutilmod_esmf_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/GridUtil/interface/ESMF_GridUtil.F90:453
+ 4 0x0000000000d9baf6 esmf_fieldregridmod_b_or_p_gridtomesh_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:3228
+ 5 0x0000000000d99004 esmf_fieldregridmod_getmeshwithnodesonfieldloc_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1346
+ 6 0x0000000000d97563 esmf_fieldregridmod_esmf_fieldregridstorenx_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:971
+ 7 0x0000000001227a17 nuopc_connector_fieldbundlecplstore_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Connector.F90:7919
+ 8 0x000000000120ee74 nuopc_connector_initializeipdv05p6b_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Connector.F90:5386
+ 9 0x0000000000650f57 ESMCI::FTable::callVFuncPtr()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:2167
+10 0x000000000064f15a ESMCI_FTableCallEntryPointVMHop()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:824
+[Orion-02-11:116085] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7f0b2c69a5d0]
+11 0x0000000000a36458 ESMCI::VM::enter()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:1216
+12 0x000000000064f537 c_esmc_ftablecallentrypointvm_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:981
+13 0x0000000000c0994d esmf_compmod_esmf_compexecute_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_Comp.F90:1223
+14 0x0000000000c1a1f1 esmf_cplcompmod_esmf_cplcompinitialize_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_CplComp.F90:1165
+15 0x00000000012475a4 nuopc_driver_loopconnectorcompss_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:2869
+16 0x000000000123eac1 nuopc_driver_initializeipdv02p3_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:2020
+17 0x000000000122e5ea nuopc_driver_initializegeneric_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/addon/NUOPC/src/NUOPC_Driver.F90:479
+18 0x0000000000650f57 ESMCI::FTable::callVFuncPtr()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:2167
+19 0x000000000064f15a ESMCI_FTableCallEntryPointVMHop()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:824
+20 0x0000000000a36458 ESMCI::VM::enter()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:1216
+21 0x000000000064f537 c_esmc_ftablecallentrypointvm_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMCI_FTable.C:981
+22 0x0000000000c0994d esmf_compmod_esmf_compexecute_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_Comp.F90:1223
+23 0x0000000000ddd9a1 esmf_gridcompmod_esmf_gridcompinitialize_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/src/Superstructure/Component/src/ESMF_GridComp.F90:1412
+24 0x00000000004065fd MAIN_()  /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/mainApp.F90:71
+25 0x0000000000406213 main()  ???:0
+26 0x0000000000022495 __libc_start_main()  ???:0
+27 0x0000000000406119 _start()  ???:0
+=================================
+[Orion-02-11:116083] *** Process received signal ***
+[Orion-02-11:116083] Signal: Segmentation fault (11)
+[Orion-02-11:116083] Signal code:  (-6)
+[Orion-02-11:116083] Failing at address: 0x20e50001c573
+[Orion-02-11:116085] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7f0b2ae3e2b3]
+[Orion-02-11:116083] [ 0] /lib64/libpthread.so.0(+0xf5d0)[0x7f0a15e795d0]
+[Orion-02-11:116085] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7f0b2af964b1]
+[Orion-02-11:116083] [ 1] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6LogErr13MsgFoundErrorEiPKciS2_S2_Pi+0x33)[0x7f0a1461d2b3]
+[Orion-02-11:116085] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreatefrompointer_+0x4c)[0x7f0b2b6a7f5c]
+[Orion-02-11:116083] [ 2] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_meshcreatenodedistgrid_+0xa1)[0x7f0a147754b1]
+[Orion-02-11:116085] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridutilmod_esmf_gridtomesh_+0x352)[0x7f0b2b589722]
+[Orion-02-11:116083] [ 3] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_meshmod_esmf_meshcreatefrompointer_+0x4c)[0x7f0a14e86f5c]
+[Orion-02-11:116085] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_b_or_p_gridtomesh_+0x156)[0x7f0b2b4adaf6]
+[Orion-02-11:116083] [ 4] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridutilmod_esmf_gridtomesh_+0x352)[0x7f0a14d68722]
+[Orion-02-11:116085] [ 6] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_getmeshwithnodesonfieldloc_+0x394)[0x7f0b2b4ab004]
+[Orion-02-11:116083] [ 5] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_b_or_p_gridtomesh_+0x156)[0x7f0a14c8caf6]
+[Orion-02-11:116085] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_esmf_fieldregridstorenx_+0x9c3)[0x7f0b2b4a9563]
+[Orion-02-11:116083] [ 6] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_getmeshwithnodesonfieldloc_+0x394)[0x7f0a14c8a004]
+[Orion-02-11:116085] [ 8] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_connector_fieldbundlecplstore_+0xbc87)[0x7f0b2b939a17]
+[Orion-02-11:116083] [ 7] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_fieldregridmod_esmf_fieldregridstorenx_+0x9c3)[0x7f0a14c88563]
+[Orion-02-11:116085] [ 9] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_connector_initializeipdv05p6b_+0x4f74)[0x7f0b2b920e74]
+[Orion-02-11:116085] [10] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x417)[0x7f0b2ad62f57]
+[Orion-02-11:116083] [ 8] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_connector_fieldbundlecplstore_+0xbc87)[0x7f0a15118a17]
+[Orion-02-11:116085] [11] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x1ea)[0x7f0b2ad6115a]
+[Orion-02-11:116083] [ 9] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_connector_initializeipdv05p6b_+0x4f74)[0x7f0a150ffe74]
+[Orion-02-11:116083] [10] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x417)[0x7f0a14541f57]
+[Orion-02-11:116085] [12] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x18)[0x7f0b2b148458]
+[Orion-02-11:116083] [11] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x1ea)[0x7f0a1454015a]
+[Orion-02-11:116085] [13] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x337)[0x7f0b2ad61537]
+[Orion-02-11:116083] [12] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x18)[0x7f0a14927458]
+[Orion-02-11:116085] [14] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_compmod_esmf_compexecute_+0x7ed)[0x7f0b2b31b94d]
+[Orion-02-11:116083] [13] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x337)[0x7f0a14540537]
+[Orion-02-11:116085] [15] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_cplcompmod_esmf_cplcompinitialize_+0x161)[0x7f0b2b32c1f1]
+[Orion-02-11:116083] [14] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_compmod_esmf_compexecute_+0x7ed)[0x7f0a14afa94d]
+[Orion-02-11:116085] [16] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_loopconnectorcompss_+0xeb4)[0x7f0b2b9595a4]
+[Orion-02-11:116083] [15] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_cplcompmod_esmf_cplcompinitialize_+0x161)[0x7f0a14b0b1f1]
+[Orion-02-11:116085] [17] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_initializeipdv02p3_+0x20f1)[0x7f0b2b950ac1]
+[Orion-02-11:116083] [16] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_loopconnectorcompss_+0xeb4)[0x7f0a151385a4]
+[Orion-02-11:116085] [18] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_initializegeneric_+0x62a)[0x7f0b2b9405ea]
+[Orion-02-11:116085] [19] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x417)[0x7f0b2ad62f57]
+[Orion-02-11:116083] [17] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_initializeipdv02p3_+0x20f1)[0x7f0a1512fac1]
+[Orion-02-11:116085] [20] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x1ea)[0x7f0b2ad6115a]
+[Orion-02-11:116083] [18] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(nuopc_driver_initializegeneric_+0x62a)[0x7f0a1511f5ea]
+[Orion-02-11:116083] [19] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x417)[0x7f0a14541f57]
+[Orion-02-11:116085] [21] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x18)[0x7f0b2b148458]
+[Orion-02-11:116083] [20] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x1ea)[0x7f0a1454015a]
+[Orion-02-11:116085] [22] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x337)[0x7f0b2ad61537]
+[Orion-02-11:116083] [21] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x18)[0x7f0a14927458]
+[Orion-02-11:116085] [23] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_compmod_esmf_compexecute_+0x7ed)[0x7f0b2b31b94d]
+[Orion-02-11:116083] [22] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x337)[0x7f0a14540537]
+[Orion-02-11:116085] [24] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridcompmod_esmf_gridcompinitialize_+0x161)[0x7f0b2b4ef9a1]
+[Orion-02-11:116085] [25] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x4065fd]
+[Orion-02-11:116085] [26] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x406213]
+[Orion-02-11:116085] [27] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7f0b26b5f495]
+[Orion-02-11:116085] [28] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x406119]
+[Orion-02-11:116085] *** End of error message ***
+[Orion-02-11:116083] [23] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_compmod_esmf_compexecute_+0x7ed)[0x7f0a14afa94d]
+[Orion-02-11:116083] [24] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.pgi.64.openmpi.default/libesmf.so(esmf_gridcompmod_esmf_gridcompinitialize_+0x161)[0x7f0a14cce9a1]
+[Orion-02-11:116083] [25] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x4065fd]
+[Orion-02-11:116083] [26] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x406213]
+[Orion-02-11:116083] [27] /lib64/libc.so.6(__libc_start_main+0xf5)[0x7f0a1033e495]
+[Orion-02-11:116083] [28] /work/noaa/da/mpotts/sandbox/pgi_2019_openmpi_O_release_8.4.0/nuopc-app-prototypes/NestingMultipleProto/./mainApp[0x406119]
+[Orion-02-11:116083] *** End of error message ***
+srun: error: Orion-02-11: tasks 0-3: Segmentation fault
+srun: launch/slurm: _step_signal: Terminating StepId=7247997.385
