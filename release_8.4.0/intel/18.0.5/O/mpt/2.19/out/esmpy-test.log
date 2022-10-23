@@ -1,0 +1,11 @@
+find . -name "*ESMF_LogFile*" -exec rm -f {} \; || :
+find . -name "*.report.json" -exec rm -rf {} \; || :
+find . -name "*.test" -exec rm -rf {} \; || :
+bash src/esmpy/test/test_all.bash "mpirun -p %g: "
+/glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_mpt_O_release_8.4.0/esmpy_venv/lib/python3.7/site-packages/esmpy/interface/loadESMF.py:83: VersionWarning: ESMF installation version 8.4.0 beta snapshot, ESMPy version 8.4.0
+  esmfversion, constants._ESMPY_VERSION), VersionWarning)
+Testing ESMPy 8.4.0
+mpirun -p %g: -np 1 python3 -m pytest -vs --json-report --json-report-summary > esmpy8.4.0-petx1.test 2>&1
+mpirun -p %g: -np 4 python3 -m pytest -vs --json-report --json-report-summary > esmpy8.4.0-petx4.test 2>&1
+mpirun -p %g: -np 6 python3 -m pytest -vs --json-report --json-report-summary > esmpy8.4.0-petx6.test 2>&1
+Report is in esmpy8.4.0-petx6.test
